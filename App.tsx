@@ -1,11 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { Text, View } from "react-native";
+import { View, Text } from "react-native";
+import { get } from "@/navigation";
 
 export default function App() {
+  get()
   return (
-    <View className='flex justify-center items-center'>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style='auto' />
+    <View className="flex">
+      <Text>HElO</Text>
+      {/* <RootNavigation /> */}
     </View>
   );
 }
