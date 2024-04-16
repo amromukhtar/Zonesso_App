@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { HomeStack, PostStack } from "../Stacks";
+import { useAppTheme, fontSize } from "@/theme";
 import { Icon, IconProps } from "@/components/ui";
 import { TabParamList } from "../types";
 import styles from "./TabNavigation.style";
@@ -36,22 +37,28 @@ const renderTabBarIcon = (routeName: keyof TabParamList) => {
       default:
         break;
     }
-    return <Icon name={iconName} color={color} />;
+    return <Icon name={iconName} size={fontSize.xxl} color={color} />;
   };
 };
 
 const TabNavigation = () => {
+  const { colors } = useAppTheme();
+
   return (
     <Navigator
       initialRouteName="HomeTab"
       screenOptions={(props) => {
+        console.log(props)
         const {
           route: { name: routeName },
         } = props;
         return {
           headerShown: false,
           tabBarIcon: renderTabBarIcon(routeName),
+          tabBarStyle: styles.tab,
           tabBarItemStyle: styles.tabItem,
+          tabBarActiveTintColor: colors.primary,
+          activeTintColor: colors.primary,
         };
       }}
     >

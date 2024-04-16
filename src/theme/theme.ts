@@ -27,7 +27,7 @@ export const theme = createTheme({
     '50%': '50%',
   },
   colors: {
-    primary: palette.orange,
+    primary: '#fd372f',
     secondary: palette.gray[500],
     background: palette.gray[100],
     card: palette.white,
