@@ -1,5 +1,5 @@
 import { NativeStackNavigationOptions } from '@react-navigation/native-stack';
-import { useAppTheme } from '@src/theme';
+import { useAppTheme } from '@/theme';
 
 export const useTransparentHeaderOptions = (): NativeStackNavigationOptions => {
   const { colorScheme } = useAppTheme();

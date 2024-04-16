@@ -3,8 +3,7 @@ import { RootNavigation } from "@/navigation";
 
 export default function App() {
   return (
-    <View className="flex">
-      <Text>HElO</Text>
+    <View className="h-full w-full bg-white">
       <RootNavigation />
     </View>
   );
