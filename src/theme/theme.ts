@@ -49,7 +49,7 @@ export const theme = createTheme({
   },
   textVariants: {
     defaults: {
-      color: 'text',
+      color: 'black',
       fontSize: 16,
     },
     primary: {

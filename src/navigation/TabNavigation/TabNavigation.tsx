@@ -18,6 +18,7 @@ const renderTabBarIcon = (routeName: keyof TabParamList) => {
   return (props: TabBarIconProps) => {
     const { color } = props;
     let iconName: IconProps["name"] = "compass";
+    let size = fontSize.xxl;
     switch (routeName) {
       case "HomeTab":
         iconName = "compass";
@@ -27,6 +28,7 @@ const renderTabBarIcon = (routeName: keyof TabParamList) => {
         break;
       case "PostTab":
         iconName = "notifications";
+        size = fontSize.xxxl;
         break;
       case "ChatTab":
         iconName = "notifications";
@@ -37,7 +39,7 @@ const renderTabBarIcon = (routeName: keyof TabParamList) => {
       default:
         break;
     }
-    return <Icon name={iconName} size={fontSize.xxl} color={color} />;
+    return <Icon name={iconName} size={size} color={color} />;
   };
 };
 
@@ -48,7 +50,6 @@ const TabNavigation = () => {
     <Navigator
       initialRouteName="HomeTab"
       screenOptions={(props) => {
-        console.log(props)
         const {
           route: { name: routeName },
         } = props;

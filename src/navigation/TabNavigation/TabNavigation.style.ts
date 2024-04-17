@@ -4,9 +4,10 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   tabItem: {
     paddingBottom: isIos ? 0 : 4,
-    borderTopLeftRadius:20,
-    borderTopRightRadius:5,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 5,
     borderTopWidth: 3,
+    borderColor: '#fd372f'
   },
   tab: {
     height: 60,
