@@ -1,2 +1,3 @@
 export * from './ui';
-export * from './AuthenticationLayout';
+export * from './header'
+export * from './mainCategories'

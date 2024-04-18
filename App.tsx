@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import {  StyleSheet } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { AppThemeProvider } from "@/theme/AppThemeProvider";
 import { PortalProvider } from "@gorhom/portal";

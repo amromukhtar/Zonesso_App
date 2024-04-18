@@ -10,7 +10,7 @@ import { RootStackParamList } from "./types";
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootNavigation = () => {
-  const userToken = false;
+  const userToken = true;
 
   return (
     <>
