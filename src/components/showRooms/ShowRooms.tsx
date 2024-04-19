@@ -29,19 +29,23 @@ const showRoomsList = [
 ];
 
 export const ShowRooms: React.FC<ShowRoomsProps> = ({ navigation }) => {
-  // const {
-  //   isLoading,
-  //   error,
-  //   data: { restaurants },
-  // } = useFetch({
-  //   url: '/restaurant/recommended',
-  //   queryKey: ['recommended-restaurants'],
-  //   initialData: { restaurants: [] },
-  // });
+  const {
+    isLoading,
+    error,
+    data: { sellers },
+  } = useFetch({
+    url: "/seller",
+    queryKey: ["showRoomsServerList"],
+    initialData: { sellers: [] },
+  });
+
+  if (error) {
+    console.log(error);
+  }
 
   const renderItem = (props: RenderItmeProps) => {
     const { id, title, distance, icon, image } = props.item;
-    const imageUrl = "";
+
     return (
       <Touchable
         activeOpacity={0.5}
@@ -78,7 +82,7 @@ export const ShowRooms: React.FC<ShowRoomsProps> = ({ navigation }) => {
         <Carousel
           width={Dimensions.get("window").width}
           numItemsPerSlide={2.4}
-          data={showRoomsList}
+          data={sellers ?? showRoomsList}
           snapEnabled
           renderItem={renderItem}
         />
