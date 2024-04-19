@@ -1,6 +1,7 @@
 import "react-native-gesture-handler";
 import React from "react";
 import { StatusBar } from "react-native";
+import { useAuth } from "@/store";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import TabNavigation from "./TabNavigation";
@@ -10,7 +11,7 @@ import { RootStackParamList } from "./types";
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootNavigation = () => {
-  const userToken = false;
+  const { authenticated } = useAuth((state: any) => state);
 
   return (
     <>
@@ -21,7 +22,7 @@ export const RootNavigation = () => {
             presentation: "modal",
           }}
         >
-          {userToken ? (
+          {authenticated ? (
             <RootStack.Screen
               name="HomeStack"
               options={{ headerShown: false }}

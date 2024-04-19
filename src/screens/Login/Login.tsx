@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuth } from "@/store";
 import { Box, Button, Image, Text } from "@/components";
 import { AuthStackParamList, ScreenProps } from "@/navigation/types";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -7,10 +8,12 @@ import { fontSize } from "@/theme";
 export const Login: React.FC<ScreenProps<AuthStackParamList, "Login">> = ({
   navigation,
 }) => {
+  const { setAuthenticated } = useAuth((state: any) => state);
   const { bottom } = useSafeAreaInsets();
 
-  const onConnectWithPhoneNumberButtonPress = () => {};
-  const onSocialNetworkConnectButtonPress = () => {};
+  const onPress = () => {
+    setAuthenticated(true);
+  };
 
   return (
     <Box flex={1} flexDirection="column" backgroundColor="white">
@@ -22,17 +25,13 @@ export const Login: React.FC<ScreenProps<AuthStackParamList, "Login">> = ({
         />
       </Box>
       <Box flex={1} justifyContent={"center"} padding="l">
-        <Button
-          label="Create New Account"
-          isFullWidth
-          onPress={onConnectWithPhoneNumberButtonPress}
-        />
+        <Button label="Create New Account" isFullWidth onPress={onPress} />
         <Button
           label="Continue with Email"
           isFullWidth
           marginTop="s"
           variant={"outline"}
-          onPress={onSocialNetworkConnectButtonPress}
+          onPress={onPress}
         />
       </Box>
       <Box
