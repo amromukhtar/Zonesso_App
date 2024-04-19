@@ -1,4 +1,10 @@
-import {  StyleSheet } from "react-native";
+import { useEffect } from "react";
+import { StyleSheet, AppState, AppStateStatus, Platform } from "react-native";
+import {
+  QueryClient,
+  QueryClientProvider,
+  focusManager,
+} from "@tanstack/react-query";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { AppThemeProvider } from "@/theme/AppThemeProvider";
 import { PortalProvider } from "@gorhom/portal";
@@ -11,16 +17,34 @@ const styles = StyleSheet.create({
   },
 });
 
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { retry: 2 } },
+});
+
+function onAppStateChange(status: AppStateStatus) {
+  if (Platform.OS !== "web") {
+    focusManager.setFocused(status === "active");
+  }
+}
+
 export default function App() {
+  useEffect(() => {
+    const subscription = AppState.addEventListener("change", onAppStateChange);
+
+    return () => subscription.remove();
+  }, []);
+
   return (
-    <GestureHandlerRootView style={styles.container}>
-      <PortalProvider>
-        <SafeAreaProvider>
-          <AppThemeProvider>
-            <RootNavigation />
-          </AppThemeProvider>
-        </SafeAreaProvider>
-      </PortalProvider>
-    </GestureHandlerRootView>
+    <QueryClientProvider client={queryClient}>
+      <GestureHandlerRootView style={styles.container}>
+        <PortalProvider>
+          <SafeAreaProvider>
+            <AppThemeProvider>
+              <RootNavigation />
+            </AppThemeProvider>
+          </SafeAreaProvider>
+        </PortalProvider>
+      </GestureHandlerRootView>
+    </QueryClientProvider>
   );
 }

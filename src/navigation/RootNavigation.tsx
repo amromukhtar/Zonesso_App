@@ -16,7 +16,7 @@ export const RootNavigation = () => {
   return (
     <>
       <NavigationContainer>
-        <StatusBar barStyle={"light-content"} />
+        <StatusBar backgroundColor={"white"} barStyle={"dark-content"} />
         <RootStack.Navigator
           screenOptions={{
             presentation: "modal",
