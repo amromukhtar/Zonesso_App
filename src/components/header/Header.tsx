@@ -1,6 +1,6 @@
 import React from "react";
 import { Picker } from "@react-native-picker/picker";
-import { Box, Icon } from "@/components";
+import { Box, Icon } from "../ui";
 import { fontSize } from "@/theme";
 
 export const Header = () => {

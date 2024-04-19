@@ -1,6 +1,6 @@
 import React from "react";
 import { useFetch } from "@/hooks/useFetch";
-import { Carousel, Section, Box, ShowRoomCard } from "@/components";
+import { Carousel, Section, Box, ShowRoomCard, Touchable } from "../ui";
 import { Dimensions } from "react-native";
 import { ShowRoomsProps, RenderItmeProps } from "./ShowRooms.type";
 
@@ -43,13 +43,20 @@ export const ShowRooms: React.FC<ShowRoomsProps> = ({ navigation }) => {
     const { id, title, distance, icon, image } = props.item;
     const imageUrl = "";
     return (
-      <ShowRoomCard
-        key={id}
-        title={title}
-        image={image}
-        icon={icon}
-        distance={distance}
-      />
+      <Touchable
+        activeOpacity={0.5}
+        shadowColor="black"
+        useForeground
+        onPress={onShowRoomPress}
+      >
+        <ShowRoomCard
+          key={id}
+          title={title}
+          image={image}
+          icon={icon}
+          distance={distance}
+        />
+      </Touchable>
     );
   };
 
@@ -57,7 +64,7 @@ export const ShowRooms: React.FC<ShowRoomsProps> = ({ navigation }) => {
     navigation.navigate("Home");
   };
 
-  const onPlaceItemPress = (id: string) => {
+  const onShowRoomPress = () => {
     navigation.navigate("Home");
   };
 

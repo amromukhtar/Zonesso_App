@@ -1,4 +1,4 @@
-import { Box, IconCard } from "@/components";
+import { Box, IconCard } from "../ui";
 import { MainCategoriesProps } from "./MainCategories.type";
 
 const mainCategoriesList = [
@@ -16,9 +16,9 @@ const mainCategoriesList = [
 export const MainCategories: React.FC<MainCategoriesProps> = ({
   navigation,
 }) => {
-  const onCategoryItemPress = (name: string) => {
+  const onCategoryItemPress = () => {
     return () => {
-      // navigation.navigate("RestaurantList", { title: name });
+      // navigation.navigate("CategoryDetails", { title: name });
     };
   };
 
@@ -34,7 +34,13 @@ export const MainCategories: React.FC<MainCategoriesProps> = ({
       {mainCategoriesList.map((category, index) => {
         const { title, icon } = category;
         return (
-          <IconCard key={index} marginTop={"m"} title={title} icon={icon} />
+          <IconCard
+            key={index}
+            marginTop={"m"}
+            title={title}
+            icon={icon}
+            onPress={onCategoryItemPress}
+          />
         );
       })}
     </Box>
