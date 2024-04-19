@@ -29,10 +29,11 @@ export const theme = createTheme({
   colors: {
     primary: '#fd372f',
     secondary: palette.gray[500],
-    background: palette.gray[100],
+    background: 'white',
     card: palette.white,
     text: palette.gray[900],
     border: palette.gray[300],
+    gray: palette.gray[700],
     danger: palette.red,
     warning: palette.yellow,
     success: palette.green,
@@ -70,7 +71,7 @@ export const theme = createTheme({
     },
     subHeader: {
       fontWeight: 'bold',
-      fontSize: 20,
+      fontSize: 18,
     },
   },
   buttonVariants: {
@@ -95,16 +96,10 @@ export const theme = createTheme({
     outline: {
       backgroundColor: 'transparent',
       borderWidth: 1,
-      borderColor: 'primary',
+      borderColor: 'gray',
     },
     transparent: {
       backgroundColor: 'transparent',
-    },
-    facebook: {
-      backgroundColor: 'facebook',
-    },
-    google: {
-      backgroundColor: 'google',
     },
   },
   buttonSizeVariants: {

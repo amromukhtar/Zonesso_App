@@ -5,6 +5,5 @@ export type SectionProps = {
   children?: React.ReactNode;
   title?: string;
   actionButtonText?: string;
-  hasDivider?: boolean;
   onButtonActionPress?: () => void;
 } & BoxProps<Theme>;

@@ -1,6 +1,7 @@
+import React from "react";
+import { Picker } from "@react-native-picker/picker";
 import { Box, Icon } from "@/components";
 import { fontSize } from "@/theme";
-import React from "react";
 
 export const Header = () => {
   return (
@@ -9,19 +10,12 @@ export const Header = () => {
       alignItems="center"
       backgroundColor="white"
       flexDirection="row"
-      padding="s"
+      padding="m"
     >
-      {/* <TextField
-        backgroundColor="background"
-        leftIcon="search"
-        borderWidth={0}
-        inputProps={{
-          placeholder: "",
-        }}
-        onChange={(e, v) => console.log(v)}
-      /> */}
-
-      <Box></Box>
+      <Picker onValueChange={(itemValue, itemIndex) => {}}>
+        <Picker.Item label="Java" value="java" />
+        <Picker.Item label="JavaScript" value="js" />
+      </Picker>
       <Icon name="search" size={fontSize.xl} />
     </Box>
   );

@@ -1,15 +1,13 @@
-import React from 'react';
-import { SectionProps } from './Section.type';
-import { Text } from '../Text';
-import { Box } from '../Box';
-import { Touchable } from '../Touchable';
-import { Divider } from '../Divider';
+import React from "react";
+import { SectionProps } from "./Section.type";
+import { Text } from "../Text";
+import { Box } from "../Box";
+import { Touchable } from "../Touchable";
 
 export const Section: React.FC<SectionProps> = ({
   children,
   title,
   actionButtonText,
-  hasDivider = true,
   onButtonActionPress,
   ...rest
 }) => {
@@ -21,14 +19,13 @@ export const Section: React.FC<SectionProps> = ({
 
   return (
     <Box {...rest}>
-      {hasDivider && (
-        <Divider backgroundColor="background" marginVertical="s" />
-      )}
       <Box
+        backgroundColor={"white"}
         flexDirection="row"
         alignItems="center"
         justifyContent="space-between"
-        padding="m">
+        paddingHorizontal="m"
+      >
         {title ? (
           <Box flex={1}>
             <Text variant="subHeader" numberOfLines={2}>

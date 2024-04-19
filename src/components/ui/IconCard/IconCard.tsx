@@ -21,10 +21,10 @@ export const IconCard: React.FC<CardProps> = ({
 }) => {
   const renderCardContent = () => {
     return (
-      <Box justifyContent={"center"} padding="s">
+      <Box alignItems={"center"} padding="s">
         <Image height={"85%"} source={icon} />
         <Box alignItems={"center"}>
-          <Text fontSize={fontSize.xs}>{title}</Text>
+        <Text fontSize={fontSize.xs}>{title}</Text>
         </Box>
       </Box>
     );
@@ -35,8 +35,8 @@ export const IconCard: React.FC<CardProps> = ({
       backgroundColor="white"
       borderRadius="m"
       borderColor="border"
-      height={"25%"}
-      width={"30%"}
+      height={"30%"}
+      width={"29%"}
       variant={variant}
       overflow={isIos ? undefined : "hidden"}
       shadowColor="black"

@@ -1,10 +1,10 @@
 import React from "react";
-
+import { ScrollView } from "react-native";
 import { HomeProps } from "./Home.type";
 import { Header } from "@/components/header";
-import { Box } from "@/components/ui";
 import { MainCategories } from "@/components/mainCategories";
-import { ScrollView, Text } from "react-native";
+import { AdsCard } from "@/components";
+import { ShowRooms } from "@/components";
 import { useSafeAreaScrollViewStyles } from "@/hooks";
 
 export const Home: React.FC<HomeProps> = ({ navigation }) => {
@@ -12,10 +12,9 @@ export const Home: React.FC<HomeProps> = ({ navigation }) => {
   return (
     <ScrollView contentContainerStyle={styles.contentContainer}>
       <Header />
-      <MainCategories />
-      <Box flex={1}>
-        <Text>HELLO</Text>
-      </Box>
+      <MainCategories navigation={navigation} />
+      <AdsCard navigation={navigation} />
+      <ShowRooms navigation={navigation} />
     </ScrollView>
   );
 };

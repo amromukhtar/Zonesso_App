@@ -5,6 +5,8 @@ export * from './Icon';
 export * from './Card';
 export * from './IconCard';
 export * from './Divider';
+export * from './ShowRoomCard';
+export * from './Carousel';
 export * from './Image';
 export * from './Touchable';
 export * from './Section';

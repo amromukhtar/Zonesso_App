@@ -8,7 +8,7 @@ export const getTextColor = (
   switch (varant) {
     case 'transparent':
     case 'outline':
-      return 'primary';
+      return 'gray';
     default:
       return 'white';
   }

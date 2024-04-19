@@ -24,7 +24,8 @@ export const MainCategories: React.FC<MainCategoriesProps> = ({
 
   return (
     <Box
-      flex={1}
+      className="gap-2"
+      flex={4}
       backgroundColor="white"
       flexDirection="row"
       justifyContent={"center"}
@@ -33,12 +34,7 @@ export const MainCategories: React.FC<MainCategoriesProps> = ({
       {mainCategoriesList.map((category, index) => {
         const { title, icon } = category;
         return (
-          <IconCard
-            marginLeft={index == 0 ? "none" : "s"}
-            marginTop={"m"}
-            title={title}
-            icon={icon}
-          />
+          <IconCard key={index} marginTop={"m"} title={title} icon={icon} />
         );
       })}
     </Box>

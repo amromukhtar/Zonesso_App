@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Button, Image, Text } from "@/components";
 import { AuthStackParamList, ScreenProps } from "@/navigation/types";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { fontSize } from "@/theme";
 
 export const Login: React.FC<ScreenProps<AuthStackParamList, "Login">> = ({
   navigation,
@@ -13,52 +14,60 @@ export const Login: React.FC<ScreenProps<AuthStackParamList, "Login">> = ({
 
   return (
     <Box flex={1} flexDirection="column" backgroundColor="white">
-      <Box flex={1}>
+      <Box flex={2}>
         <Image
           source={require("@/assets/app/main-image.png")}
           width="100%"
           height="100%"
         />
       </Box>
+      <Box flex={1} justifyContent={"center"} padding="l">
+        <Button
+          label="Create New Account"
+          isFullWidth
+          onPress={onConnectWithPhoneNumberButtonPress}
+        />
+        <Button
+          label="Continue with Email"
+          isFullWidth
+          marginTop="s"
+          variant={"outline"}
+          onPress={onSocialNetworkConnectButtonPress}
+        />
+      </Box>
       <Box
         flex={1}
         padding="l"
+        alignItems={"center"}
+        justifyContent={"flex-end"}
         borderTopLeftRadius="xxl"
         borderTopRightRadius="xxl"
       >
-        <Text fontWeight="bold" variant="header">
-          Get food you want.
+        <Text marginVertical={"s"} fontSize={fontSize.xs}>
+          {"By signing up, you agree to our "}
+          <Text fontSize={fontSize.xs} color={"primary"}>
+            {"Terms of Service "}
+          </Text>
+          {"& "}
+          <Text fontSize={fontSize.xs} color={"primary"}>
+            {"Privacy Policy"}
+          </Text>
         </Text>
-        <Text marginTop="xs" variant="secondary">
-          Satisfy your cravings by getting the food you love from your favourite
-          restaurants delivered to you fast. Delivery & takeout from the best
-          local restaurants.
+        <Text
+          marginVertical={"s"}
+          fontSize={fontSize.s}
+          color={"primary"}
+          textDecorationLine={"underline"}
+        >
+          {"Sign Up Later"}
         </Text>
-        <Box marginTop="l">
-          <Button
-            label="Connect with Phone Number"
-            isFullWidth
-            onPress={onConnectWithPhoneNumberButtonPress}
-          />
-          <Button
-            label="Connect with Facebook"
-            isFullWidth
-            variant="facebook"
-            marginTop="s"
-            backgroundColor="facebook"
-            onPress={onSocialNetworkConnectButtonPress}
-          />
-          <Button
-            label="Connect with Google"
-            variant="google"
-            marginTop="s"
-            isFullWidth
-            onPress={onSocialNetworkConnectButtonPress}
-          />
-        </Box>
+        <Text marginVertical={"s"} fontSize={fontSize.xs}>
+          {"Already have an account?"}
+          <Text fontSize={fontSize.xs} color={"primary"}>
+            {" Log in"}
+          </Text>
+        </Text>
       </Box>
     </Box>
   );
 };
-
-
