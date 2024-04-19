@@ -1,11 +1,7 @@
 import React from "react";
 import { PostProps } from "./Post.type";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 
 export const Post: React.FC<PostProps> = ({ navigation }) => {
-  return (
-    <View className="flex">
-      <Text>HI</Text>
-    </View>
-  );
+  return <View></View>;
 };

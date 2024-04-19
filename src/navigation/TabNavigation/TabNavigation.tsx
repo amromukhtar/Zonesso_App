@@ -21,20 +21,20 @@ const renderTabBarIcon = (routeName: keyof TabParamList) => {
     let size = fontSize.xxl;
     switch (routeName) {
       case "HomeTab":
-        iconName = "compass";
+        iconName = "home-outline";
         break;
       case "ActivityTab":
-        iconName = "timer";
+        iconName = "notifications-outline";
         break;
       case "PostTab":
-        iconName = "notifications";
+        iconName = "add-circle-sharp";
         size = fontSize.xxxl;
         break;
       case "ChatTab":
-        iconName = "notifications";
+        iconName = "chatbubble-outline";
         break;
       case "UserTab":
-        iconName = "person-circle";
+        iconName = "person-outline";
         break;
       default:
         break;

@@ -24,7 +24,6 @@ export const MainCategories: React.FC<MainCategoriesProps> = ({
 
   return (
     <Box
-      className="gap-2"
       flex={4}
       backgroundColor="white"
       flexDirection="row"
@@ -36,6 +35,7 @@ export const MainCategories: React.FC<MainCategoriesProps> = ({
         return (
           <IconCard
             key={index}
+            marginLeft={"s"}
             marginTop={"m"}
             title={title}
             icon={icon}

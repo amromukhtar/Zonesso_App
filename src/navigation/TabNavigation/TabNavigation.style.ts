@@ -11,8 +11,8 @@ export default StyleSheet.create({
   },
   tab: {
     height: 60,
-    borderTopRightRadius: 30,
-    borderTopLeftRadius: 30,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
     position: 'absolute',
     borderTopWidth: 0,
     elevation: 0

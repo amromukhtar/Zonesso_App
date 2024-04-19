@@ -10,7 +10,7 @@ export const Header = () => {
       alignItems="center"
       backgroundColor="white"
       flexDirection="row"
-      padding="m"
+      paddingHorizontal="m"
     >
       <Picker onValueChange={(itemValue, itemIndex) => {}}>
         <Picker.Item label="Java" value="java" />
