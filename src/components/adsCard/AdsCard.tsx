@@ -21,7 +21,7 @@ export const AdsCard: React.FC<AdsCardProps> = ({ navigation }) => {
 
   return (
     <Box
-      flex={2}
+      flex={3}
       backgroundColor="white"
       flexDirection="row"
       paddingHorizontal={"m"}

@@ -6,6 +6,11 @@ export default StyleSheet.create({
     paddingBottom: isIos ? 0 : 4,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 5,
+  },
+  tabItemActive: {
+    paddingBottom: isIos ? 0 : 4,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 5,
     borderTopWidth: 3,
     borderColor: '#fd372f'
   },

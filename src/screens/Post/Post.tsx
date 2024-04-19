@@ -1,7 +1,7 @@
 import React from "react";
 import { PostProps } from "./Post.type";
-import { View } from "react-native";
+import { Box } from "@/components";
 
 export const Post: React.FC<PostProps> = ({ navigation }) => {
-  return <View></View>;
+  return <Box flex={1} backgroundColor={"white"}></Box>;
 };

@@ -24,7 +24,7 @@ export const MainCategories: React.FC<MainCategoriesProps> = ({
 
   return (
     <Box
-      flex={4}
+      flex={5}
       backgroundColor="white"
       flexDirection="row"
       justifyContent={"center"}

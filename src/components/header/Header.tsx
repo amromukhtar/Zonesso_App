@@ -1,6 +1,5 @@
 import React from "react";
-import { Picker } from "@react-native-picker/picker";
-import { Box, Icon } from "../ui";
+import { Box, Image, Icon, Text } from "../ui";
 import { fontSize } from "@/theme";
 
 export const Header = () => {
@@ -10,12 +9,13 @@ export const Header = () => {
       alignItems="center"
       backgroundColor="white"
       flexDirection="row"
+      paddingTop={"m"}
       paddingHorizontal="m"
     >
-      <Picker onValueChange={(itemValue, itemIndex) => {}}>
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-      </Picker>
+      <Box flexDirection="row">
+        <Image source={require("@/assets/app/Location.png")} />
+        <Text marginLeft={"s"}>Dubai</Text>
+      </Box>
       <Icon name="search" size={fontSize.xl} />
     </Box>
   );

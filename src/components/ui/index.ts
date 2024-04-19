@@ -1,4 +1,5 @@
 export * from './Box';
+export * from './TabBar';
 export * from './Text';
 export * from './Button';
 export * from './Icon';
